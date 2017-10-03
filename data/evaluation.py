@@ -11,7 +11,7 @@ class Evaluation(object):
         diff = skel1.reshape(-1,3)*50 - skel2.reshape(-1,3)*50
         diff = alg.norm(diff, axis=1)
         if globalConfig.dataset == 'NYU':
-            l = [2,4,8,10,14,16,20,22,26,28,31,32,33,34]
+            l = [0,3,6,9,12,15,18,21,24,25,27,30,31,32]
             diff = diff[l]
         return diff.max() 
 
@@ -20,7 +20,7 @@ class Evaluation(object):
         diff = skel1.reshape(-1,3)*50 - skel2.reshape(-1,3)*50
         diff = alg.norm(diff, axis=1)
         if globalConfig.dataset == 'NYU':
-            l = [2,4,8,10,14,16,20,22,26,28,31,32,33,34]
+            l = [0,3,6,9,12,15,18,21,24,25,27,30,31,32]
             diff = diff[l]
         return diff.mean() 
 
