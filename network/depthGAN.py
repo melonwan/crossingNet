@@ -421,6 +421,11 @@ class DepthGAN(object):
         return metric_layer, combi_metric_layer
 
     def build_recognition(self, output_dim, hidden_layer=None):
+        # this sub-network is used for ICVL and MSRA dastaset. 
+        # more complicated network architecture is used for NYU.
+        if globalConfig.dataset == 'NYU':
+            raise NotImplementedError
+
         if hidden_layer is None:
             hidden_layer = self.dis_hidden_layer
 
